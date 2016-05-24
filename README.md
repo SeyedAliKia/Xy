@@ -1,13 +1,12 @@
 # Xy
 
-**An advanced and powerful administration bot based on [yagop/telegram-bot](https://github.com/yagop/telegram-bot) licensed under the [GNU General Public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**.
+**An advanced and powerful x bot based on [TeleSeed](https://github.com/seedteam/teleseed) licensed under the [GNU General Public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**.
 # Features
 
-* **A powerful antispam system with custom sensitivity for each group**
-* **Multiple realms (admin groups)**
-* **Recalcitrant to any kind of spamming (X/Y bots, name/photo changers, etc.)**
-* **Global banning**
-* **Broadcast to all groups**
+* **A Powerful Xy System**
+* **Setname & Setphoto Command**
+* **Xy Can Join Groups Using Link**
+* **Xy Can Spam Group**
 * **Group links**
 * **Kick, ban and unban by reply**
 * **Groups, ban and global ban list**
