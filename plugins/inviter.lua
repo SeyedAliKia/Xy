@@ -6,18 +6,18 @@ local function callback(extra, success, result)
 end
 
 local function run(msg, matches)
- if matches[1] == 'attack' then
+ if matches[1]:lower() == 'attack' and is_sudo(msg) then
         chat = 'chat#'..msg.to.id
-        user1 = 'user#'..155739746 --@Dante1Bot
-        user2 = 'user#'..144629652 --@Dante2Bot
-        user3 = 'user#'..173903646 --@Dante3Bot
-        user4 = 'user#'..185698549 --@Dante4Bot
-        user5 = 'user#'.. --@Dante5Bot
-        user6 = 'user#'.. --@Dante6Bot
-        user7 = 'user#'.. --@AlphaGroupBot
-        user8 = 'user#'.. --@BetaGroupBot
-        user9 = 'user#'.. --@JorjRobot
-        user10 = 'user#'.. 
+        user1 = 'user#'..96691794
+        user2 = 'user#'..121002299
+        user3 = 'user#'..118020250
+        --[[user4 = 'user#'..
+        user5 = 'user#'..
+        user6 = 'user#'..
+        user7 = 'user#'..
+        user8 = 'user#'..
+        user9 = 'user#'..
+        user10 = 'user#'..
         user11 = 'user#'..
         user12 = 'user#'..
         user13 = 'user#'..
@@ -57,11 +57,11 @@ local function run(msg, matches)
         user47 = 'user#'..
         user48 = 'user#'..
         user49 = 'user#'..
-        user50 = 'user#'..
+        user50 = 'user#'..]]
         chat_add_user(chat, user1, callback, false)
         chat_add_user(chat, user2, callback, false)
         chat_add_user(chat, user3, callback, false)
-        chat_add_user(chat, user4, callback, false)
+        --[[chat_add_user(chat, user4, callback, false)
         chat_add_user(chat, user5, callback, false)
         chat_add_user(chat, user6, callback, false)
         chat_add_user(chat, user7, callback, false)
@@ -107,7 +107,7 @@ local function run(msg, matches)
         chat_add_user(chat, user47, callback, false)
         chat_add_user(chat, user48, callback, false)
         chat_add_user(chat, user49, callback, false)
-        chat_add_user(chat, user50, callback, false)
+        chat_add_user(chat, user50, callback, false)]]
 	return ""
       end
  end
@@ -126,3 +126,9 @@ return {
 
 
 end
+
+
+--Maked By @SoLiD021 And @BeyondTeam
+--Plz Dont Remove My Name :,(
+--Nice Plugin For X , Y Bots
+--Good Luck Attackers :D
