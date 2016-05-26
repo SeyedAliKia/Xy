@@ -30,3 +30,5 @@ chmod +x launch.sh
 
 
 [@MrTorento](https://telegram.me/MrTorento)
+
+Channel : [@Fucker_Team](https://telegram.me/Fucker_Team)
