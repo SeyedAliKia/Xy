@@ -149,7 +149,7 @@ local function run(msg,matches)
     	unblock_user("user#id"..matches[2],ok_cb,false)
     	return "User unblocked"
     end
-    if matches[1] == "import" then--join by group link
+    if matches[1] == "join" then--join by group link
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
     end
@@ -188,20 +188,20 @@ local function run(msg,matches)
 end
 return {
   patterns = {
-	"^[!/](pm) (%d+) (.*)$",
-	"^[!/](import) (.*)$",
-	"^[!/](unblock) (%d+)$",
-	"^[!/](block) (%d+)$",
-	"^[!/](markread) (on)$",
-	"^[!/](markread) (off)$",
-	"^[!/](setbotphoto)$",
+	"^([Pp]m) (%d+) (.*)$",
+	"^([Jj]oin) (.*)$",
+	"^([Uu]nblock) (%d+)$",
+	"^([Bb]lock) (%d+)$",
+	"^([Mm]arkread) (on)$",
+	"^([Mm]arkread) (off)$",
+	"^([Ss]etbotphoto)$",
 	"%[(photo)%]",
-	"^[!/](contactlist)$",
-	"^[!/](dialoglist)$",
-	"^[!/](delcontact) (%d+)$",
-        "^[!/](addcontact) (.*) (.*) (.*)$",
-	"^[!/](whois) (%d+)$",
-	"^/(sync_gbans)$"--sync your global bans with seed
+	"^([Cc]ontactlist)$",
+	--"^([Dd]ialoglist)$",
+	"^([Dd]elcontact) (%d+)$",
+        "^([Aa]ddcontact) (.*) (.*) (.*)$",
+	"^([Ww]hois) (%d+)$",
+	--"^/(sync_gbans)$"--sync your global bans with seed
   },
   run = run,
 }
