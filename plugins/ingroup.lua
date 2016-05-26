@@ -450,7 +450,7 @@ end
 local function modadd(msg)
   -- superuser and admins only (because sudo are always has privilege)
   if not is_admin(msg) then
-    return "You're not admin"
+    return ""
   end
   local data = load_data(_config.moderation.data)
   if is_group(msg) then
@@ -462,7 +462,7 @@ end
 local function realmadd(msg)
   -- superuser and admins only (because sudo are always has privilege)
   if not is_admin(msg) then
-    return "You're not admin"
+    return ""
   end
   local data = load_data(_config.moderation.data)
   if is_realm(msg) then
@@ -488,7 +488,7 @@ end
 function realmrem(msg)
   -- superuser and admins only (because sudo are always has privilege)
   if not is_admin(msg) then
-    return "You're not admin"
+    return ""
   end
   local data = load_data(_config.moderation.data)
   if not is_realm(msg) then
@@ -887,7 +887,7 @@ local function run(msg, matches)
     if matches[1] == 'setphoto' and is_momod(msg) then
       data[tostring(msg.to.id)]['settings']['set_photo'] = 'waiting'
       save_data(_config.moderation.data, data)
-      return 'Please send me new group photo now'
+      return ''
     end
     if matches[1] == 'promote' and not matches[2] then
       if not is_owner(msg) then
