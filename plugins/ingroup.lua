@@ -14,7 +14,7 @@ local function check_member_autorealm(cb_extra, success, result)
         settings = {
           set_name = string.gsub(msg.to.print_name, '_', ' '),
           lock_name = 'yes',
-          lock_photo = 'no',
+          lock_photo = 'yes',
           lock_member = 'no',
           flood = 'yes'
         }
@@ -430,11 +430,11 @@ local function unlock_group_photomod(msg, data, target)
   end
   local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
   if group_photo_lock == 'no' then
-    return 'Group photo is not locked'
+    return ''
   else
     data[tostring(target)]['settings']['lock_photo'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Group photo has been unlocked'
+    return ''
   end
 end
 
@@ -520,7 +520,7 @@ local function set_group_photo(msg, success, result)
     save_data(_config.moderation.data, data)
     data[tostring(msg.to.id)]['settings']['lock_photo'] = 'yes'
     save_data(_config.moderation.data, data)
-    send_large_msg(receiver, '!', ok_cb, false)
+    send_large_msg(receiver, '', ok_cb, false)
   else
     print('Error downloading: '..msg.id)
     send_large_msg(receiver, '', ok_cb, false)
