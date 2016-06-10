@@ -7,7 +7,14 @@
 * **Setname & Setphoto Command**
 * **Xy Can Join Groups Using Link**
 * **Xy Can Spam Group**
+* 
+# Commands
 
+* **Add & Rem**
+* **Setname [Name]**
+* **Setphoto**
+* **Leave**
+* **Spam [number] [text]**
 
 # Installation
 
