@@ -4,12 +4,12 @@ local function lock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
   if group_name_lock == 'yes' then
-    return 'Group name is already locked'
+    return '>اسم گروه از قبل قفل است !'
   else
     data[tostring(target)]['settings']['lock_name'] = 'yes'
     save_data(_config.moderation.data, data)
     rename_chat('chat#id'..target, group_name_set, ok_cb, false)
-  return 'Group name has been locked'
+  return '>اسم گروه قفل شد !'
   end
 end
 
@@ -17,66 +17,66 @@ local function unlock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
   if group_name_lock == 'no' then
-    return 'Group name is already unlocked'
+    return '>قفل اسم گروه از قبل باز است !'
   else
     data[tostring(target)]['settings']['lock_name'] = 'no'
     save_data(_config.moderation.data, data)
-  return 'Group name has been unlocked'
+  return '>قفل اسم گروه باز شد !'
   end
 end
 
 local function lock_group_floodmod(msg, data, target)
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'yes' then
-    return 'Group flood is locked'
+    --return 'Group flood is locked'
   else
     data[tostring(target)]['settings']['flood'] = 'yes'
-    save_data(_config.moderation.data, data)
-  return 'Group flood has been locked'
+    --save_data(_config.moderation.data, data)
+    --return 'Group flood has been locked'
   end
 end
 
 local function unlock_group_floodmod(msg, data, target)
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'no' then
-    return 'Group flood is not locked'
+    --return 'Group flood is not locked'
   else
     data[tostring(target)]['settings']['flood'] = 'no'
-    save_data(_config.moderation.data, data)
-  return 'Group flood has been unlocked'
+    --save_data(_config.moderation.data, data)
+    --return 'Group flood has been unlocked'
   end
 end
 
 local function lock_group_membermod(msg, data, target)
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'yes' then
-    return 'Group members are already locked'
+    --return 'Group members are already locked'
   else
     data[tostring(target)]['settings']['lock_member'] = 'yes'
-    save_data(_config.moderation.data, data)
+    --save_data(_config.moderation.data, data)
   end
-  return 'Group members has been locked'
+  --return 'Group members has been locked'
 end
 
 local function unlock_group_membermod(msg, data, target)
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'no' then
-    return 'Group members are not locked'
+    --return 'Group members are not locked'
   else
     data[tostring(target)]['settings']['lock_member'] = 'no'
-    save_data(_config.moderation.data, data)
-  return 'Group members has been unlocked'
+    --save_data(_config.moderation.data, data)
+    --return 'Group members has been unlocked'
   end
 end
 
 local function unlock_group_photomod(msg, data, target)
   local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
   if group_photo_lock == 'no' then
-      return 'Group photo is not locked'
+      return '>عکس گروه قفل نیست !'
   else
       data[tostring(target)]['settings']['lock_photo'] = 'no'
       save_data(_config.moderation.data, data)
-  return 'Group photo has been unlocked'
+  return '>قفل عکس گروه باز شد !'
   end
 end
 
@@ -92,23 +92,23 @@ local function show_group_settingsmod(msg, data, target)
     end
     local settings = data[tostring(target)]['settings']
     local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nflood sensitivity : "..NUM_MSG_MAX
-    return text
+    --return text
 end
 
 local function set_rules(target, rules)
   local data = load_data(_config.moderation.data)
   local data_cat = 'rules'
   data[tostring(target)][data_cat] = rules
-  save_data(_config.moderation.data, data)
-  return 'Set group rules to:\n'..rules
+  --save_data(_config.moderation.data, data)
+  --return 'Set group rules to:\n'..rules
 end
 
 local function set_description(target, about)
   local data = load_data(_config.moderation.data)
   local data_cat = 'description'
   data[tostring(target)][data_cat] = about
-  save_data(_config.moderation.data, data)
-  return 'Set group description to:\n'..about
+  --save_data(_config.moderation.data, data)
+  --return 'Set group description to:\n'..about
 end
 
 local function run(msg, matches)
@@ -288,7 +288,7 @@ local function run(msg, matches)
       savelog(matches[2], name.." ["..msg.from.id.."] has changed group rules to ["..matches[3].."]")
       return set_rules(target, rules)
     end
-    if matches[1] == 'changename' and is_owner2(msg.from.id, matches[2]) then
+    if matches[1] == 'setname' and is_admin(msg.from.id, matches[2]) then
       local new_name = string.gsub(matches[3], '_', ' ')
       data[tostring(matches[2])]['settings']['set_name'] = new_name
       save_data(_config.moderation.data, data)
@@ -306,12 +306,12 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^[!/]owners (%d+) ([^%s]+) (.*)$",
-    "^[!/]owners (%d+) ([^%s]+)$",
-    "^[!/](changeabout) (%d+) (.*)$",
-    "^[!/](changerules) (%d+) (.*)$",
-    "^[!/](changename) (%d+) (.*)$",
-		"^[!/](loggroup) (%d+)$"
+    "^[Oo]wners (%d+) ([^%s]+) (.*)$",
+    "^[Oo]wners (%d+) ([^%s]+)$",
+    --"^[!/](changeabout) (%d+) (.*)$",
+    --"^[!/](changerules) (%d+) (.*)$",
+    "^([Ss]etname) (%d+) (.*)$",
+    "^[!/](loggroup) (%d+)$"
   },
   run = run
 }
