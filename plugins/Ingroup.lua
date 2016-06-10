@@ -16,7 +16,7 @@ local function check_member_autorealm(cb_extra, success, result)
           lock_name = 'yes',
           lock_photo = 'yes',
           lock_member = 'no',
-          flood = 'yes'
+          flood = 'no'
         }
       }
       save_data(_config.moderation.data, data)
@@ -44,9 +44,9 @@ local function check_member_realm_add(cb_extra, success, result)
         settings = {
           set_name = string.gsub(msg.to.print_name, '_', ' '),
           lock_name = 'yes',
-          lock_photo = 'no',
+          lock_photo = 'yes',
           lock_member = 'no',
-          flood = 'yes'
+          flood = 'no'
         }
       }
       save_data(_config.moderation.data, data)
