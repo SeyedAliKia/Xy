@@ -216,6 +216,7 @@ function create_config( )
     "Invite",
     "Leave",
     "Plugins",
+    "Pvcmds",
     "Spam",
     "Xy"
     },
