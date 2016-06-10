@@ -23,7 +23,7 @@ function run(msg, matches)
   --if not is_momod(msg) then
     --return
   --end
-  if not is_admin(msg) then -- For sudo only !
+  if not is_admin(msg) then -- For admins only !
     return ''
   end
 	local cbres_extra = {chatid = msg.to.id}
