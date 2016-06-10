@@ -208,16 +208,16 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "admin",
-    "cpu",
-    "download_media",
-    "gitpuller",
-    "ingroup",
-    "invite",
-    "leave",
-    "plugins",
-    "spam",
-    "xy"
+    "Admin",
+    "Cpu",
+    "Download_media",
+    "Gitpuller",
+    "Ingroup",
+    "Invite",
+    "Leave",
+    "Plugins",
+    "Spam",
+    "Xy"
     },
     sudo_users = {162900190,177618046,tonumber(our_id)},--Sudo users
     disabled_channels = {},
