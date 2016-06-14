@@ -42,7 +42,7 @@ local function list_all_plugins(only_enabled)
       text = text..nsum..'. '..v..'  '..status..'\n'
     end
   end
-  local text = text..'\nهم اکنون ' ..nsum.. ' بر روی ایکس ایگرگ نصب شده است .\n' ..nact.. ' پلاگین فعال هستند و  '..nsum-nact.. 'پلاگین غیر فعال .'
+  local text = text..'\nهم اکنون ' ..nsum.. 'پلاگین بر روی ایکس ایگرگ نصب شده است .\n' ..nact.. 'پلاگین فعال و  '..nsum-nact.. 'پلاگین غیر فعال .'
   return text
 end
 
