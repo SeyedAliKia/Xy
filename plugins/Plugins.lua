@@ -159,21 +159,21 @@ local function run(msg, matches)
   -- Re-enable a plugin for this chat
   if matches[1] == 'enable' and matches[3] == 'chat' then
     local receiver = get_receiver(msg)
-    local plugin = matches[2]
+    local plugin = matches[2]:lower()
     print("enable "..plugin..' on this chat')
     return reenable_plugin_on_chat(receiver, plugin)
   end
 
   -- Enable a plugin
   if matches[1] == 'enable' and is_sudo(msg) then --after changed to moderator mode, set only sudo
-    local plugin_name = matches[2]
+    local plugin_name = matches[2]:lower()
     print("enable: "..matches[2])
     return enable_plugin(plugin_name)
   end
 
   -- Disable a plugin on a chat
   if matches[1] == 'disable' and matches[3] == 'chat' then
-    local plugin = matches[2]
+    local plugin = matches[2]:lower()
     local receiver = get_receiver(msg)
     print("disable "..plugin..' on this chat')
     return disable_plugin_on_chat(receiver, plugin)
