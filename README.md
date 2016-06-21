@@ -42,6 +42,4 @@ chmod +x launch.sh
 
 My Messanger : [@SeyedRobot](https://telegram.me/SeyedRobot)
 
-[@MrTorento](https://telegram.me/MrTorento)
-
-
++
