@@ -126,17 +126,17 @@ local function run(msg,matches)
     if matches[1] == "markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return "Mark read > on"
+    		return ">تیک دوم : روشن"
     	end
     	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return "Mark read > off"
+    		return ">تیک دوم : خاموش"
     	end
     	return
     end
     if matches[1] == "pm" then
     	send_large_msg("user#id"..matches[2],matches[3])
-    	return "Msg sent"
+    	return ">پیام فرستاده شد !"
     end
     if matches[1] == "block" then
     	if is_admin2(matches[2]) then
@@ -162,7 +162,7 @@ local function run(msg,matches)
     end
     if matches[1] == "delcontact" then
       del_contact("user#id"..matches[2],ok_cb,false)
-      return "User "..matches[2].." removed from contact list"
+      return ">کاربر "..matches[2].." از مخاطبین من حذف شد !"
     end
     if matches[1] == "dialoglist" then
       get_dialog_list(get_dialog_list_callback, {target = msg.from.id})
