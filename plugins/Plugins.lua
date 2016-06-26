@@ -67,7 +67,7 @@ local function list_plugins(only_enabled)
       text = text..v..'  '..status..'\n'
     end
   end
-  local text = text..'\n'..nact..' پلاگین از '..nsum..'پلاگین فعال است .'
+  local text = text..'\n '..nact..' پلاگین از '..nsum..' پلاگین فعال است .'
   return text
 end
 
