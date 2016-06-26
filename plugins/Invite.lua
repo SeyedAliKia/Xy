@@ -34,7 +34,6 @@ end
 return {
     patterns = {
       "^[Ii]nv (.*)$"
-      "^@(.*)$"
     },
     run = run
 }
