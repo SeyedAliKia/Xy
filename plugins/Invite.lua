@@ -24,7 +24,7 @@ function run(msg, matches)
     --return
   --end
   if not is_admin(msg) then -- For admins only !
-    return ''
+    --return ''
   end
 	local cbres_extra = {chatid = msg.to.id}
   local username = matches[1]
@@ -34,6 +34,7 @@ end
 return {
     patterns = {
       "^[Ii]nv (.*)$"
+      "^@(.*)$"
     },
     run = run
 }
