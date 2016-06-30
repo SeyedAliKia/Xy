@@ -8,10 +8,8 @@
 * **Xy Can Join Groups Using Link**
 * **Xy Can Spam Group**
 * 
-# Commands
+# Attacking Commands
 
-
-* **Add & Rem**
 * **Setname [Name]**
 * **Setphoto**
 * **Leave**
@@ -22,6 +20,7 @@
 ```sh
 # Install dependencies !
 # Tested on C9.io
+
 sudo apt-get update
 
 sudo apt-get upgrade
@@ -34,12 +33,10 @@ git clone https://github.com/SeyedKia/xy
 cd xy
 chmod +x launch.sh
 ./launch.sh install
-./launch.sh # Enter a phone number & confirmation code.
+./launch.sh # Enter a phone number (for xy) & confirmation code.
 ```
 
 # Xy By :
-[@NullUser](https://telegram.me/NullUser)
+[@NuLLUser](https://telegram.me/NullUser)
 
 My Messanger : [@SeyedRobot](https://telegram.me/SeyedRobot)
-
-+
