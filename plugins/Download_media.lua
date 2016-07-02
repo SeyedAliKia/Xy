@@ -32,4 +32,4 @@ return {
   pre_process = pre_process
 }
 
--- Download Images !
+-- Just Download Images !
