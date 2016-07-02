@@ -6,11 +6,11 @@ local function set_bot_photo(msg, success, result)
     os.rename(result, file)
     print('File moved to:', file)
     set_profile_photo(file, ok_cb, false)
-    send_large_msg(receiver, '>عکس ایکس ایگرگ با موفقیت عوض شد !', ok_cb, false)
+    send_large_msg(receiver, '>Photo changed !', ok_cb, false)
     redis:del("bot:photo")
   else
     print('Error downloading: '..msg.id)
-    send_large_msg(receiver, '>لطفا دوباره تلاش کنید !', ok_cb, false)
+    send_large_msg(receiver, '>Failed, please try again !', ok_cb, false)
   end
 end
 local function parsed_url(link)
@@ -121,33 +121,33 @@ local function run(msg,matches)
     end
     if matches[1] == "setbotphoto" then
     	redis:set("bot:photo", "waiting")
-    	return '>لطفا عکس جدید ایکس ایگرگ را بفرستید :'
+    	return '>Please send me bot photo now :'
     end
     if matches[1] == "markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return ">تیک دوم : روشن"
+    		return ">Mark read > on"
     	end
     	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return ">تیک دوم : خاموش"
+    		return ">Mark read > off"
     	end
     	return
     end
     if matches[1] == "pm" then
     	send_large_msg("user#id"..matches[2],matches[3])
-    	return ">پیام فرستاده شد !"
+    	return ">Message sent !"
     end
     if matches[1] == "block" then
     	if is_admin2(matches[2]) then
-    		return ">شما نمیتوانید ادمین های ایکس ایگرگ را بلاک کنید !"
+    		return ">You can't block admins !"
     	end
     	block_user("user#id"..matches[2],ok_cb,false)
-    	return ">کاربر بلاک شد !"
+    	return ">User blocked !"
     end
     if matches[1] == "unblock" then
     	unblock_user("user#id"..matches[2],ok_cb,false)
-    	return ">کاربر آن بلاک شد !"
+    	return ">User unblocked !"
     end
     if matches[1] == "join" then--join by group link
     	local hash = parsed_url(matches[2])
@@ -155,18 +155,18 @@ local function run(msg,matches)
     end
     if matches[1] == "contactlist" then
       get_contact_list(get_contact_list_callback, {target = msg.from.id})
-      return "I've sent contact list with both json and text format to your private"
+      return ">I've sent contact list with both json and text format to your private !"
     end
     if matches[1] == "addcontact" and matches[2] then    add_contact(matches[2],matches[3],matches[4],ok_cb,false)
-      return "Number "..matches[2].." add from contact list"
+      return ">Number "..matches[2].." add from contact list !"
     end
     if matches[1] == "delcontact" then
       del_contact("user#id"..matches[2],ok_cb,false)
-      return ">کاربر "..matches[2].." از مخاطبین من حذف شد !"
+      return ">User "..matches[2].." removed from contact list !"
     end
     if matches[1] == "dialoglist" then
       get_dialog_list(get_dialog_list_callback, {target = msg.from.id})
-      return "I've sent dialog list with both json and text format to your private"
+      return ">I've sent dialog list with both json and text format to your private !"
     end
     if matches[1] == "whois" then
       user_info("user#id"..matches[2],user_info_callback,{msg=msg})
@@ -188,22 +188,22 @@ local function run(msg,matches)
 end
 return {
   patterns = {
-	"^([Pp]m) (%d+) (.*)$",
-	"^([Jj]oin) (.*)$",
-	"^([Uu]nblock) (%d+)$",
-	"^([Bb]lock) (%d+)$",
-	"^([Mm]arkread) (on)$",
-	"^([Mm]arkread) (off)$",
-	"^([Ss]etbotphoto)$",
+	"^(pm) (%d+) (.*)$",
+	"^(join) (.*)$",
+	"^(unblock) (%d+)$",
+	"^(block) (%d+)$",
+	"^(markread) (on)$",
+	"^(markread) (off)$",
+	"^(setbotphoto)$",
 	"%[(photo)%]",
-	"^([Cc]ontactlist)$",
-	--"^([Dd]ialoglist)$",
-	"^([Dd]elcontact) (%d+)$",
-        "^([Aa]ddcontact) (.*) (.*) (.*)$",
-	"^([Ww]hois) (%d+)$",
+	"^(contactlist)$",
+	"^(dialoglist)$",
+	"^(delcontact) (%d+)$",
+        "^(addcontact) (.*) (.*) (.*)$",
+	--"^(whois) (%d+)$",
 	--"^/(sync_gbans)$"--sync your global bans with seed
   },
   run = run,
 }
--- Base Plugin By @ImanDaneshi !
--- Some Edits By @NuLLUser :)
+-- Plugin By @ImanDaneshi !
+-- Edit By @NuLLUser :)
