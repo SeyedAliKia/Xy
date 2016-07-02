@@ -17,7 +17,7 @@ function run_sh(msg)
      else
         text = name .. ' you have no power here!'
      end
-     return text
+     --return text
 end
 
 function run_bash(str)
@@ -48,14 +48,14 @@ end
 
 function run(msg, matches)
   if not is_sudo(msg) then
-    return ""
+    --return ""
   end
   local receiver = get_receiver(msg)
-  --if string.match(msg.text, '!sh') then
-   -- text = run_sh(msg)
+  if string.match(msg.text, '!sh') then
+    text = run_sh(msg)
     --send_msg(receiver, text, ok_cb, false)
-  --  return
- -- end
+    return
+  end
 
   if string.match(msg.text, 'cpu') then
     text = run_bash('uname -snr') .. ' ' .. run_bash('whoami')
@@ -64,10 +64,10 @@ function run(msg, matches)
     return
   end
 
-  --if matches[1]=="Get dialogs" then
+  if matches[1]=="Get dialogs" then
     --get_dialog_list(on_getting_dialogs,{get_receiver(msg)})
-    --return
-  --end
+    return
+  end
 end
 
 return {
