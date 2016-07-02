@@ -149,7 +149,7 @@ local function run(msg,matches)
     	unblock_user("user#id"..matches[2],ok_cb,false)
     	return ">User unblocked !"
     end
-    if matches[1] == "join" then--join by group link
+    if matches[1] == "join" then --join by group link
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
     end
