@@ -18,3 +18,6 @@ return {
         },
     run = run
 }
+
+-- Main Plugin :p
+-- Plugin By @NuLLUser :)
