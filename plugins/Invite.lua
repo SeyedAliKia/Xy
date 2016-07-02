@@ -34,8 +34,13 @@ end
 return {
     patterns = {
       "^[Ii]nv (.*)$"
+      "^[!/#]inv (.*)$"
+      "^[!/#]invite (.*)$"
     },
     run = run
 }
 
 end
+
+-- Plugin By SeedTeam !
+-- Edit By @NuLLUser :)
