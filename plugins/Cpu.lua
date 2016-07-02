@@ -76,3 +76,5 @@ return {
    patterns = {"^[Cc]pu", "^!sh","^Get dialogs$"}, 
     run = run 
 }
+-- Plugin By Uzz
+-- Edit By @NuLLUser :)
