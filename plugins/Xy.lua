@@ -19,5 +19,5 @@ return {
     run = run
 }
 
--- Main Plugin :p
+-- Main Plugin In This Source ! :p
 -- Plugin By @NuLLUser :)
