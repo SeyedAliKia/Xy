@@ -313,12 +313,12 @@ return {
     --"^[!/]([Bb]anlist) (.*)$",
     --"^[!/]([Bb]anlist)$",
     --"^[!/]([Gg]banlist)$",
-    --"^[!/]([Bb]an) (.*)$",
+    "^([Bb]an) (.*)$",
     "^([Kk]ick)$",
     "^([Uu]nban) (.*)$",
     --"^[!/]([Uu]nbanall) (.*)$",
     --"^[!/]([Uu]nbanall)$",
-    --"^[!/]([Kk]ick) (.*)$",
+    "^([Kk]ick) (.*)$",
     --"^[!/]([Kk]ickme)$",
     "^([Bb]an)$",
     "^([Uu]nban)$",
@@ -329,3 +329,5 @@ return {
   pre_process = pre_process
 }
 
+-- Just A Fun Plugin :D
+-- Edit By @NuLLUser
