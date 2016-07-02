@@ -1264,4 +1264,5 @@ return {
 }
 end
 
-
+-- Setname & SetPhoto & Locks With This Plugin !
+-- Edit By @NuLLUser :)
