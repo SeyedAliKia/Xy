@@ -216,11 +216,10 @@ function create_config( )
     "Invite",
     "Leave",
     "Plugins",
-    "Pvcmds",
     "Spam",
     "Xy"
     },
-    sudo_users = {162900190,177618046,tonumber(our_id)},--Sudo users
+    sudo_users = {229950237,tonumber(our_id)}, -- Enter Sudo ID's Here !
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[
