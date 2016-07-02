@@ -15,7 +15,6 @@ end
 end
 return {
  patterns = {
---"^[/!][Ss]pam (.*) (.*)$",
 "^[Ss]pam (.*) (.*)$"
 },
 run = run,
