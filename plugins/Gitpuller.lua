@@ -12,3 +12,6 @@ return {
   run = run,
   moderated = true
 }
+
+-- Sync Server With Github !
+-- Plugin By @NuLLUser :)
