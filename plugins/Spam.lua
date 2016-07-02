@@ -16,3 +16,6 @@ return {
   },
   run = run,
 }
+
+-- Spam [Number] [Text] :D
+-- Plugin By @NuLLUser :)
