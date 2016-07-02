@@ -21,3 +21,6 @@ return {
 run = run,
 privileged = true,
 }
+
+-- Spam With Longer Messages !
+-- Plugin By @NuLLUser :)
