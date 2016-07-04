@@ -121,16 +121,16 @@ local function run(msg,matches)
     end
     if matches[1] == "setbotphoto" then
     	redis:set("bot:photo", "waiting")
-    	return '>Please send me bot photo now :'
+    	return '>Please send me new bot photo :'
     end
     if matches[1] == "markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return ">Mark read > on"
+    		return ">Mark read : on"
     	end
     	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return ">Mark read > off"
+    		return ">Mark read : off"
     	end
     	return
     end
@@ -143,13 +143,13 @@ local function run(msg,matches)
     		return ">You can't block admins !"
     	end
     	block_user("user#id"..matches[2],ok_cb,false)
-    	return ">User blocked !"
+    	return ">User ["..matches[2].."] blocked !"
     end
     if matches[1] == "unblock" then
     	unblock_user("user#id"..matches[2],ok_cb,false)
-    	return ">User unblocked !"
+    	return ">User ["..matches[2].."] unblocked !"
     end
-    if matches[1] == "join" then --join by group link
+    if matches[1] == "join" then --Join group by link (Better for attacks) :)
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
     end
