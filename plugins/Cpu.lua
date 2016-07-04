@@ -17,7 +17,7 @@ function run_sh(msg)
      else
         text = name .. ' you have no power here!'
      end
-     --return text
+     return text
 end
 
 function run_bash(str)
@@ -48,12 +48,12 @@ end
 
 function run(msg, matches)
   if not is_sudo(msg) then
-    --return ""
+    --return "You aren't allowed!"
   end
   local receiver = get_receiver(msg)
   if string.match(msg.text, '!sh') then
     text = run_sh(msg)
-    --send_msg(receiver, text, ok_cb, false)
+    send_msg(receiver, text, ok_cb, false)
     return
   end
 
@@ -65,16 +65,18 @@ function run(msg, matches)
   end
 
   if matches[1]=="Get dialogs" then
-    --get_dialog_list(on_getting_dialogs,{get_receiver(msg)})
+    get_dialog_list(on_getting_dialogs,{get_receiver(msg)})
     return
   end
 end
 
 return {
     description = "shows cpuinfo", 
-    usage = "!cpu",
-   patterns = {"^[Cc]pu", "^!sh","^Get dialogs$"}, 
+    usage = "cpu",
+    patterns = {
+    	"^cpu",
+    	--"^!sh",
+    	--"^Get dialogs$"
+    	}, 
     run = run 
 }
--- Plugin By Uzz
--- Edit By @NuLLUser :)
