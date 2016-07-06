@@ -81,5 +81,5 @@ return {
     run = run 
 }
 
--- Cpu Plugin By Uzz
+-- Plugin By Uzz
 -- Edit By @NuLLUser :)
