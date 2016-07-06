@@ -217,6 +217,7 @@ function create_config( )
     "Leave",
     "Plugins",
     "Spam",
+    "Serverinfo",
     "Xy"
     },
     sudo_users = {229950237,tonumber(our_id)}, -- Enter Sudo ID's Here !
