@@ -7,7 +7,7 @@
 * **Setname & Setphoto Command**
 * **Xy Can Join Groups Using Link**
 * **Xy Can Spam Group**
-* 
+
 # Attacking Commands
 * **Setname [Name]**
 * **Setphoto**
