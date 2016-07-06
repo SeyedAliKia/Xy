@@ -11,3 +11,6 @@ return {
   run = run,
   moderated = true
 }
+
+-- Plugin By Shield Team
+-- Edit By @NuLLUser :)
