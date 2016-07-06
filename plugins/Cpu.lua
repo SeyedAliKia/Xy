@@ -80,3 +80,6 @@ return {
     	}, 
     run = run 
 }
+
+-- Cpu Plugin By Uzz
+-- Edit By @NuLLUser :)
