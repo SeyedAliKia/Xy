@@ -1,12 +1,13 @@
 # Xy
 
-**An advanced and powerful xy bot based on [TeleSeed](https://github.com/seedteam/teleseed) licensed under the [GNU General Public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**.
+**An Advanced And Powerful Xy Bot Based On [TeleSeed](https://github.com/seedteam/teleseed) licensed under the [GNU General Public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**.
 # Features
 
 * **A Powerful Xy System**
 * **Setname & Setphoto Command**
 * **Xy Can Join Groups Using Link**
 * **Xy Can Spam Group**
+* **You Can Check Cpu Status And Serverinfo**
 
 # Attacking Commands
 * **Setname [Name]**
@@ -35,7 +36,9 @@ chmod +x launch.sh
 ./launch.sh # Enter a phone number (for xy) & confirmation code.
 ```
 
-# Xy By :
+# Xy Source By :
 [@NuLLUser](https://telegram.me/NullUser)
 
 My Messanger : [@SeyedRobot](https://telegram.me/SeyedRobot)
+
+Thanks To @SoliD021 For Help !
