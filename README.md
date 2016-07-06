@@ -9,7 +9,6 @@
 * **Xy Can Spam Group**
 * 
 # Attacking Commands
-
 * **Setname [Name]**
 * **Setphoto**
 * **Leave**
