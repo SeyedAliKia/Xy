@@ -19,16 +19,18 @@ memUsed_m=$(($memTotal_m-$memFree_m-$memBuffer_m-$memCache_m))
 
 memUsedPrc=$((($memUsed_b*100)/$memTotal_b))
 
-echo ">Memory: CRITICAL Total: $memTotal_m MB"
+echo "1⃣Memory: CRITICAL Total: $memTotal_m MB"
 echo "➖➖➖➖➖➖➖➖➖"
-echo ">Memory Used: $memUsed_m MB - $memUsedPrc% used!"
+echo "2⃣Memory Used: $memUsed_m MB - $memUsedPrc% used!"
 echo "➖➖➖➖➖➖➖➖➖"
-echo ">Total : $memTotal_b"
+echo "3⃣Total : $memTotal_b"
 echo "➖➖➖➖➖➖➖➖➖"
-echo ">CPU Usage : '"$CPUPer"'%'
+echo '4⃣CPU Usage : '"$CPUPer"'%'
 echo "➖➖➖➖➖➖➖➖➖"
-echo ">Hdd : '"$hdd"'%'
+echo '5⃣Hdd : '"$hdd"'%'
 echo "➖➖➖➖➖➖➖➖➖"
-echo ">Processes : '"$ProcessCnt"
+echo '6⃣Processes : '"$ProcessCnt"
 echo "➖➖➖➖➖➖➖➖➖"
-echo ">Uptime : '"$uptime"
+echo '7⃣Uptime : '"$uptime"
+echo ""
+echo ""
