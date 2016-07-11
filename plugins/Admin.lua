@@ -119,11 +119,11 @@ local function run(msg,matches)
       		end
       	end
     end
-    if matches[1] == "setbotphoto" then
+    if matches[1]:lower() == "setbotphoto" then
     	redis:set("bot:photo", "waiting")
     	return '>Please send me new bot photo :'
     end
-    if matches[1] == "markread" then
+    if matches[1]:lower() == "markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
     		return ">Mark read : on"
@@ -134,11 +134,11 @@ local function run(msg,matches)
     	end
     	return
     end
-    if matches[1] == "pm" then
+    if matches[1]:lower() == "pm" then
     	send_large_msg("user#id"..matches[2],matches[3])
     	return ">Message sent !"
     end
-    if matches[1] == "block" then
+    if matches[1]:lower() == "block" then
     	if is_admin2(matches[2]) then
     		return ">You can't block admins !"
     	end
@@ -149,22 +149,22 @@ local function run(msg,matches)
     	unblock_user("user#id"..matches[2],ok_cb,false)
     	return ">User ["..matches[2].."] unblocked !"
     end
-    if matches[1] == "join" then --Join group by link (Better for attacks) :)
+    if matches[1]:lower() == "join" then --Join group by link (Better for attacks) :)
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
     end
-    if matches[1] == "contactlist" then
+    if matches[1]:lower() == "contactlist" then
       get_contact_list(get_contact_list_callback, {target = msg.from.id})
       return ">I've sent contact list with both json and text format to your private !"
     end
     if matches[1] == "addcontact" and matches[2] then    add_contact(matches[2],matches[3],matches[4],ok_cb,false)
       return ">Number "..matches[2].." add from contact list !"
     end
-    if matches[1] == "delcontact" then
+    if matches[1]:lower() == "delcontact" then
       del_contact("user#id"..matches[2],ok_cb,false)
       return ">User "..matches[2].." removed from contact list !"
     end
-    if matches[1] == "dialoglist" then
+    if matches[1]:lower() == "dialoglist" then
       get_dialog_list(get_dialog_list_callback, {target = msg.from.id})
       return ">I've sent dialog list with both json and text format to your private !"
     end
@@ -188,18 +188,18 @@ local function run(msg,matches)
 end
 return {
   patterns = {
-	"^(pm) (%d+) (.*)$",
-	"^(join) (.*)$",
-	"^(unblock) (%d+)$",
-	"^(block) (%d+)$",
-	"^(markread) (on)$",
-	"^(markread) (off)$",
-	"^(setbotphoto)$",
+	"^([Pp]m) (%d+) (.*)$",
+	"^([Jj]oin) (.*)$",
+	"^([Uu]nblock) (%d+)$",
+	"^([Bb]lock) (%d+)$",
+	"^([Mm]arkread) (on)$",
+	"^([Mm]arkread) (off)$",
+	"^([Ss]etbotphoto)$",
 	"%[(photo)%]",
-	"^(contactlist)$",
-	"^(dialoglist)$",
-	"^(delcontact) (%d+)$",
-        "^(addcontact) (.*) (.*) (.*)$",
+	"^([Cc]ontactlist)$",
+	"^([Dd]ialoglist)$",
+	"^([Dd]elcontact) (%d+)$",
+        "^([Aa]ddcontact) (.*) (.*) (.*)$",
 	--"^(whois) (%d+)$",
 	--"^/(sync_gbans)$"--sync your global bans with seed
   },
