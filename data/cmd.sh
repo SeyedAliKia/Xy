@@ -23,14 +23,10 @@ echo ">Memory: $memTotal_m MB"
 echo "➖➖➖➖➖➖➖➖➖"
 echo ">Memory Used: $memUsed_m MB - $memUsedPrc% used!"
 echo "➖➖➖➖➖➖➖➖➖"
-echo ">Total : $memTotal_b"
-echo "➖➖➖➖➖➖➖➖➖"
 echo '>CPU Usage : '"$CPUPer"'%'
 echo "➖➖➖➖➖➖➖➖➖"
-echo '>Hdd : '"$hdd"'%'
+echo '>HDD Usage : '"$hdd"'%'
 echo "➖➖➖➖➖➖➖➖➖"
 echo '>Processes : '"$ProcessCnt"
 echo "➖➖➖➖➖➖➖➖➖"
 echo '>Uptime : '"$uptime"
-echo ""
-echo ""
