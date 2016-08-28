@@ -41,3 +41,6 @@ return {
   },
   run = run,
 }
+
+-- Plugin by @It_Mkh
+-- Edited by @NuLLUser :)
