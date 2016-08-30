@@ -2,31 +2,17 @@ do
 local function callbackres(extra, success, result) -- Callback for res_user in line 27
   local user = 'user#id'..result.id
 	local chat = 'chat#id'..extra.chatid
-	if is_banned(result.id, extra.chatid) then -- Ignore bans
-            send_large_msg(chat, '')
-	elseif is_gbanned(result.id) then -- Ignore globall bans
-	    send_large_msg(chat, '')
-	else    
-	    chat_add_user(chat, user, ok_cb, false) -- Add user on chat
+	    chat_add_user(chat, user, ok_cb, false) -- Add User On Chat !
 	end
 end
-function run(msg, matches)
-  local data = load_data(_config.moderation.data)
-  if not is_realm(msg) then
-    if data[tostring(msg.to.id)] and data[tostring(msg.to.id)]['settings']['lock_member'] == 'yes' and not is_admin(msg) then
-		  --return ''
-    end
-  end
+function runs(msg, matches)
   if msg.to.type ~= 'chat' then 
     return
   end
-  --if not is_momod(msg) then
-    --return
-  --end
-  if not is_admin(msg) then -- For admins only !
-    --return ''
+  if not is_admin(msg) then -- For Admins Only !
+    return
   end
-	local cbres_extra = {chatid = msg.to.id}
+  local cbres_extra = {chatid = msg.to.id}
   local username = matches[1]
   local username = username:gsub("@","")
   res_user(username,  callbackres, cbres_extra)
@@ -37,10 +23,10 @@ return {
       "^[!/#]inv (.*)$",
       "^[!/#]invite (.*)$",
     },
-    run = run
+    run = runs
 }
 
 end
 
--- Plugin By SeedTeam !
--- Edit By @NuLLUser :)
+-- Main Plugin >> https://github.com/SEEDTEAM/TeleSeed/blob/master/plugins/invite.lua
+-- Edited By @NuLLuseR :)
