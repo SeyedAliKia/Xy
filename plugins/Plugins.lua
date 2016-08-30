@@ -82,7 +82,7 @@ local function enable_plugin( plugin_name )
   print('checking if '..plugin_name..' exists')
   -- Check if plugin is enabled
   if plugin_enabled(plugin_name) then
-    return 'Plugin '..plugin_name..' is enabled'
+    return '>Plugin '..plugin_name..' is enabled'
   end
   -- Checks if plugin exists
   if plugin_exists(plugin_name) then
@@ -150,14 +150,14 @@ local function reenable_plugin_on_chat(receiver, plugin)
   return '>Plugin '..plugin..' is enabled again !'
 end
 
-local function run(msg, matches)
+local function runs(msg, matches)
   -- Show the available plugins 
-  if matches[1] == 'p' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1]:lower() == 'p' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return list_all_plugins()
   end
 
   -- Re-enable a plugin for this chat
-  if matches[1] == 'enable' and matches[3] == 'chat' then
+  if matches[1] == '+' and matches[3] == 'chat' then
     local receiver = get_receiver(msg)
     local plugin = matches[2]
     print("enable "..plugin..' on this chat')
@@ -172,7 +172,7 @@ local function run(msg, matches)
   end
 
   -- Disable a plugin on a chat
-  if matches[1] == 'disable' and matches[3] == 'chat' then
+  if matches[1] == '-' and matches[3] == 'chat' then
     local plugin = matches[2]
     local receiver = get_receiver(msg)
     print("disable "..plugin..' on this chat')
@@ -182,14 +182,14 @@ local function run(msg, matches)
   -- Disable a plugin
   if matches[1] == '-' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     if matches[2] == 'plugins' then
-    	return 'This plugin can\'t be disabled'
+    	return '>This plugin can\'t be disabled'
     end
     print("disable: "..matches[2])
     return disable_plugin(matches[2])
   end
 
   -- Reload all the plugins!
-  if matches[1] == 'reload' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1]:lower() == 'r' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return reload_plugins(true)
   end
 end
@@ -198,28 +198,28 @@ return {
   description = "Plugin to manage other plugins. Enable, disable or reload.", 
   usage = {
       moderator = {
-          "p disable [plugin] chat : disable plugin only this chat.",
-          "p enable [plugin] chat : enable plugin only this chat.",
+          "p - [plugin] chat : disable plugin only this chat.",
+          "p + [plugin] chat : enable plugin only this chat.",
           },
       sudo = {
           "p : list all plugins.",
-          "p enable [plugin] : enable plugin.",
-          "p disable [plugin] : disable plugin.",
+          "p + [plugin] : enable plugin.",
+          "p - [plugin] : disable plugin.",
           "p reload : reloads all plugins." },
           },
   patterns = {
-    "^p$",
-    "^p? (+) ([%w_%.%-]+)$",
-    "^p? (-) ([%w_%.%-]+)$",
-    "^p? (enable) ([%w_%.%-]+) (chat)",
-    "^p? (disable) ([%w_%.%-]+) (chat)",
-    "^p? (reload)$" },
-  run = run,
+    "^[Pp]$",
+    "^[Pp]? (+) ([%w_%.%-]+)$",
+    "^[Pp]? (-) ([%w_%.%-]+)$",
+    "^[Pp]? (+) ([%w_%.%-]+) (chat)",
+    "^[Pp]? (-) ([%w_%.%-]+) (chat)",
+    "^[Pp]? (r)$" },
+  run = runs,
   moderated = true, -- set to moderator mode
   --privileged = true
 }
 
 end
 
--- Plugin By Uzz !
--- Edit By @NuLLUser :)
+-- Main Plugin >> https://github.com/uziins/uzzbot/blob/master/plugins/plugins.lua
+-- Edited By @NuLLuseR :)
