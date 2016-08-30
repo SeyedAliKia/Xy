@@ -3,7 +3,7 @@ local function add_user(chat, user)
    if not status then
    end
 end
-    local function run(msg, matches)
+    local function runs(msg, matches)
            if matches[1] == 'chat_del_user' then
                 local user = 'chat#id'..msg.to.id 
                 local chat = 'chat#id'..msg.from.id
@@ -16,7 +16,7 @@ return {
     patterns = {
         "^!!tgservice (chat_del_user)$",
         },
-    run = run
+    run = runs
 }
 
 -- Main Plugin In This Source ! :p
