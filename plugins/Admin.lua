@@ -188,6 +188,8 @@ local function runs(msg,matches)
     return
 end
 return {
+	
+  description = "Admin Commands", 
   patterns = {
 	"^([Pp]m) (%d+) (.*)$",
 	"^([Jj]oin) (.*)$",
