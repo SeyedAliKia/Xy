@@ -14,13 +14,12 @@ local function run(msg, matches)
 end
 end
 return {
-  description = "Echo Every Message !",
-  usage = "Return Every Message !",
+  description = "Echo Every Message",
   patterns = {
     "^(.+)$",
   }, 
   run = run 
 }
 
--- Plugin By @Pokr_Face
--- Edit By @NuLLUser :)
+-- Main Plugin >> https://github.com/telemanagerplus/TeleManagerPlus/blob/master/plugins/echo.lua
+-- Edited By @NuLLuseR :)
