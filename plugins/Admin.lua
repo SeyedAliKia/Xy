@@ -105,7 +105,7 @@ local function get_dialog_list_callback(cb_extra, success, result)
   file:close()
   send_document("user#id"..cb_extra.target,"dialog_list.json", ok_cb, false)--json format
 end
-local function run(msg,matches)
+local function runs(msg,matches)
     local data = load_data(_config.moderation.data)
     local receiver = get_receiver(msg)
     local group = msg.to.id
@@ -204,7 +204,7 @@ return {
 	--"^(whois) (%d+)$",
 	--"^/(sync_gbans)$"--sync your global bans with seed
   },
-  run = run,
+  run = runs,
 }
 -- Main Plugin >> https://github.com/SEEDTEAM/TeleSeed/blob/master/plugins/admin.lua
 -- Edited By @NuLLuseR :)
