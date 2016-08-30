@@ -1,4 +1,4 @@
-function run(msg, matches)
+function runs(msg, matches)
 if not is_sudo(msg) then
 return 
 end
@@ -9,9 +9,8 @@ return {
   patterns = {
     '^[Uu]pdate$'
   },
-  run = run,
+  run = runs,
   moderated = true
 }
 
--- Sync Server With Github !
 -- Plugin By @NuLLUser :)
