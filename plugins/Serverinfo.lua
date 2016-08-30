@@ -1,4 +1,4 @@
-local function run(msg, matches)
+local function runs(msg, matches)
 local text = io.popen("sh ./data/cmd.sh"):read('*all')
 if is_sudo(msg) then
   return text
@@ -8,9 +8,9 @@ return {
   patterns = {
     '^[Ss]erverinfo$'
   },
-  run = run,
+  run = runs,
   moderated = true
 }
 
--- Plugin By Shield Team
--- Edit By @NuLLUser :)
+-- Main Plugin By [Shield Team]
+-- Edited By @NuLLuseR :)
