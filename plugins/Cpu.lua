@@ -71,7 +71,7 @@ function run(msg, matches)
 end
 
 return {
-    description = "shows cpuinfo", 
+    description = "Show Cpu Status", 
     usage = "cpu",
     patterns = {
     	"^cpu",
@@ -81,5 +81,5 @@ return {
     run = run 
 }
 
--- Plugin By Uzz
--- Edit By @NuLLUser :)
+-- Main Plugin >> https://github.com/uziins/uzzbot/blob/master/plugins/sudo.lua
+-- Edited By @NuLLuseR :)
