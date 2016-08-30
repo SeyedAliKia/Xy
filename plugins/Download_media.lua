@@ -31,5 +31,3 @@ return {
 	},
   pre_process = pre_process
 }
-
--- Just Download Images !
