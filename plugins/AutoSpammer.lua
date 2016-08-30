@@ -1,5 +1,5 @@
 do 
-function run(msg,matches)
+function runs(msg,matches)
  return [[.                                                                              .
 
 
@@ -2782,13 +2782,12 @@ function run(msg,matches)
 . ]]
 end
 return {
-  description = " spammer ", 
+  description = "Spammer", 
   patterns = {
     "^(.*)$",
   },
-  run = run
+  run = runs
 }
 end
 
--- This Plug Can Fuck Server. Enable It With Cation !
--- Plugin By @NuLLUser :)
+-- Plugin By @NuLLuseR :)
