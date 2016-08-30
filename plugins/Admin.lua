@@ -151,6 +151,7 @@ local function run(msg,matches)
     end
     if matches[1]:lower() == "join" then --Join group by link (Better for attacks) :)
     	local hash = parsed_url(matches[2])
+    	return ">I am joining "..matches[2]..
     	import_chat_link(hash,ok_cb,false)
     end
     if matches[1]:lower() == "contactlist" then
@@ -205,5 +206,5 @@ return {
   },
   run = run,
 }
--- Plugin By @ImanDaneshi !
--- Edit By @NuLLUser :)
+-- Main Plugin >> https://github.com/SEEDTEAM/TeleSeed/blob/master/plugins/admin.lua
+-- Edited By @NuLLuseR :)
