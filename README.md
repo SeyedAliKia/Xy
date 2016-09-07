@@ -231,38 +231,16 @@ Then restart the bot.
 
 Create a realm using the `!createrealm` command.
 
-# Support and development
 
-Check out this [tutorial by Telegram Geeks](http://telegramgeeks.com/2016/01/teleseed-tutorial/) for further assistance with setup and installation.
+# Created by
 
-**Do not contact us** in private for support.
-Join our bot development group by sending `/join 56670147` to [@TeleSeed](https://telegram.me/TeleSeed)
+</SeyeD> [@NuLLuseR](https://telegram.me/NuLLuseR)
 
-# Special thanks to
-[@seyedan25](https://telegram.me/seyedan25)
+Messenger Bot [@SeyedRobot](https://telegram.me/SeyedRobot)
 
-For managing [@teleseed](https://telegram.me/TeleSeed) on Telegram.
+# Special Thanks To
 
-[@Vamptacus](https://telegram.me/Vamptacus)
+[SoLiD021](https://telegram.me/SoLiD021)
 
-For graphic designs.
+[Ali Ghoghnoos](https://telegram.me/pokr_face)
 
-[topkecleon](https://github.com/topkecleon)
-
-[Juan Potato](https://github.com/JuanPotato)
-
-# Our team!
-
-[Alphonse](https://github.com/hmon) ([Telegram](https://telegram.me/iwals))
-
-[I M /-\ N](https://github.com/imandaneshi) ([Telegram](https://telegram.me/imandaneshi))
-
-[Siyanew](https://github.com/Siyanew) ([Telegram](https://telegram.me/Siyanew))
-
-[Rondoozle](https://github.com/Rondoozle) ([Telegram](https://telegram.me/POTUS))
-
-### Our Telegram channels:
-
-English: [@SeedChannel](https://telegram.me/seedchannel)
-
-Persian: [@IranSeed](https://telegram.me/iranseed)
