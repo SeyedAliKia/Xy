@@ -10,7 +10,7 @@
 * **Create a limit for anti spams that they can't kick or change name/photo**
 * **And more!**
 
-- [Created By](#special-thanks-to)
+- [Created By](#created-by)
 - [Special Thanks](#special-thanks-to)
 
 
@@ -66,7 +66,7 @@ chmod +x launch.sh
 ./launch.sh # Enter a phone number & confirmation code.
 ```
 
-# Created by
+# Created By
 
 </SeyeD> [@NuLLuseR](https://telegram.me/NuLLuseR)
 
