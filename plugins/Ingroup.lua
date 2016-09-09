@@ -1231,7 +1231,7 @@ return {
   "^([Ss]etphoto)$",
   "^([Ll]ock) (.*)$",
   "^([Uu]nlock) (.*)$",
-  
+  "^([Rr]es) (.*)$",
   [[
   --"^[!/](add) (realm)$",
   --"^[!/](rem) (realm)$",
@@ -1249,7 +1249,6 @@ return {
   --"^[!/](setowner) (%d+)$",
   --"^[!/](setowner)",
   --"^[!/](owner)$",
-  --"^[!/](res) (.*)$",
   --"^[!/](setgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   --"^[!/](setflood) (%d+)$",
   --"^[!/](settings)$",
