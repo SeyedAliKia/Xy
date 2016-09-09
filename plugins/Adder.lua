@@ -14,7 +14,7 @@ end
 
 return {
     patterns = {
-        "^([Aa]dd)$",
+        "^[Aa]dd$",
         },
     run = runs
 }
