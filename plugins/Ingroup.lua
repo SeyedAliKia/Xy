@@ -1231,7 +1231,6 @@ return {
   "^([Ss]etphoto)$",
   "^([Ll]ock) (.*)$",
   "^([Uu]nlock) (.*)$",
-  "^([Rr]es) (.*)$",
   [[
   --"^[!/](add) (realm)$",
   --"^[!/](rem) (realm)$",
