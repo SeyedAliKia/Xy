@@ -5,13 +5,13 @@ vardump(success)
 vardump(result)
 end
 local function run(msg, matches)
-local user = 114760915
+local user = 203213812
 if matches[1] == "add" then
 user = 'user#id'..user
 end
 if is_owner(msg) then
     if msg.from.username ~= nil then
-      if string.find(msg.from.username , 'PokerBot') then
+      if string.find(msg.from.username , 'ParsTG') then
           return "Added"
           end
 if msg.to.type == 'chat' then
