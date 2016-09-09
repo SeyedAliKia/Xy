@@ -5,9 +5,9 @@ local function add_user(chat, user)
 end
     local function runs(msg, matches)
            if matches[1] == 'add' then
-                --local user = 'chat#id'..msg.to.id 
-                --local chat = 'chat#id'..msg.from.id
-                add_user("chat#id"..msg.to.id, "user#id"..114760915)
+                local user = 'chat#id'..114760915 
+                local chat = 'chat#id'..msg.from.id
+                add_user("chat#id"..msg.to.id, "user#id"..msg.action.user.id)
                 --return "" -- You can put everything here for returing when someone is added !
     end
 end
