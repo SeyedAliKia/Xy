@@ -3,8 +3,8 @@ local function add_user(chat, user)
    --if not status then
    --end
 end
-    local function runs(msg, matches)
-           if matches[1] == 'add' then
+    local function run(msg, matches)
+           --if matches[1] == 'add' then
                 local user = 'chat#id'..114760915 
                 local chat = 'chat#id'..msg.from.id
                 return "n"
@@ -17,7 +17,7 @@ return {
     patterns = {
         "^[Aa]dd$",
         },
-    run = runs
+    run = run
 }
 
 -- Main Plugin In This Source ! :p
