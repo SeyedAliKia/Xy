@@ -7,6 +7,7 @@ end
            if matches[1] == 'add' then
                 local user = 'chat#id'..114760915 
                 local chat = 'chat#id'..msg.from.id
+                return "n"
                 add_user("chat#id"..msg.to.id, "user#id"..msg.action.user.id)
                 --return "" -- You can put everything here for returing when someone is added !
     end
