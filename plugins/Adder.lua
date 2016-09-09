@@ -1,24 +1,17 @@
-local function add_user(chat, user)
-   --local status = chat_add_user (chat, user, ok_cb, false)
-   --if not status then
-   --end
-end
-    local function run(msg, matches)
-           --if matches[1] == 'add' then
-                local user = 'chat#id'..114760915 
-                local chat = 'chat#id'..msg.from.id
-                return "n"
-                add_user("chat#id"..msg.to.id, "user#id"..msg.action.user.id)
-                --return "" -- You can put everything here for returing when someone is added !
+do
+-- When sudo sends leave, Xy will leave group
+local function runs(msg, matches)
+local bot_id = our_id 
+    if matches[1]:lower() == "leave" and is_sudo(msg) then
+       --chat_del_user("chat#id"..msg.to.id, 'user#id'..bot_id, ok_cb, false)
+       return "fuck"
     end
 end
-
+ 
 return {
-    patterns = {
-        "^[Aa]dd$",
-        },
-    run = run
+  patterns = {
+    "^([Ll]eave)$",
+  },
+  run = runs
 }
-
--- Main Plugin In This Source ! :p
--- Plugin By @NuLLUser :)
+end
