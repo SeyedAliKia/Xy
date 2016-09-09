@@ -8,7 +8,7 @@ end
                 local user = 'chat#id'..msg.to.id 
                 local chat = 'chat#id'..msg.from.id
                 --add_user("chat#id"..msg.to.id, "user#id"..msg.action.user.id)
-                return " "..user.." \n ""..chat..
+                return "تست"
                 --return "" -- You can put everything here for returing when someone is added !
     end
 end
