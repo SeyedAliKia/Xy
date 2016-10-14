@@ -17,6 +17,7 @@ function runs(msg, matches)
   local username = username:gsub("@","")
   res_user(username,  callbackres, cbres_extra)
 end
+end
 return {
     patterns = {
       "^[Ii]nv (.*)$",
