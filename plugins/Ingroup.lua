@@ -1231,7 +1231,6 @@ return {
   "^([Ss]etphoto)$",
   "^([Ll]ock) (.*)$",
   "^([Uu]nlock) (.*)$",
-  [[
   --"^[!/](add) (realm)$",
   --"^[!/](rem) (realm)$",
   --"^[!/](rules)$",
@@ -1257,7 +1256,6 @@ return {
   --"^[!/](link)$",
   --"^[!/](kickinactive)$",
   --"^[!/](kickinactive) (%d+)$",
-  ]]
   "%[(photo)%]",
   "^!!tgservice (.+)$",
   },
